@@ -7,10 +7,13 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
 # Shortcuts to folders
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
+alias downloads="cd ~/Downloads"
+alias desktop="cd ~/Desktop"
+alias workspace="cd ~/Workspace"
+alias devops="cd ~/Workspace/devops"
+alias nexus="cd ~/Workspace/nexus"
 alias g="git"
+alias gitcleanup='git branch | grep -v "develop" | xargs git branch -D'
 
 # Make terminal better
 alias h='history'
@@ -31,6 +34,16 @@ alias egrep='egrep --color=auto'
 alias now='date +"%T"'
 alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
+
+# ssh shortcuts
+alias thor='ssh dgdrhr-01.chop.edu'
+alias respublica='ssh respublica.research.chop.edu'
+alias nexus_prod='ssh dgdnexus.chop.edu'
+alias nexus_dev='ssh dgdnexus-dev.chop.edu'
+alias nexus_test='ssh dgdnexus-staging.chop.edu'
+alias airflow_prod='ssh airflow.chop.edu'
+alias airflow_dev='ssh airflow-dev.chop.edu'
+alias airflow_test='ssh airflow-test.chop.edu'
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
