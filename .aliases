@@ -36,11 +36,13 @@ alias nowtime=now
 alias nowdate='date +"%d-%m-%Y"'
 
 # ssh shortcuts
-alias thor='ssh dgdrhr-01.chop.edu'
+alias thor='ssh dgdlnapp01.chop.edu'
 alias respublica='ssh respublica.research.chop.edu'
+alias respublica_ip='ssh  10.30.29.201'
 alias nexus_prod='ssh dgdnexus.chop.edu'
 alias nexus_dev='ssh dgdnexus-dev.chop.edu'
-alias nexus_test='ssh dgdnexus-staging.chop.edu'
+alias nexus_test='ssh reslnnexustst01.research.chop.edu'
+alias nexus_rhel8='ssh reslnnexustst02.research.chop.edu'
 alias airflow_prod='ssh airflow.chop.edu'
 alias airflow_dev='ssh airflow-dev.chop.edu'
 alias airflow_test='ssh airflow-test.chop.edu'
