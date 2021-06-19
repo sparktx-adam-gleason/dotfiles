@@ -71,12 +71,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
-    pyenv
-    virtualenv
-    zsh-pyenv
     zsh-autosuggestions
     zsh-syntax-highlighting
-    history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
