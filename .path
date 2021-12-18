@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$GOPATH/bin:$JENV/bin:$PLENV/bin:$PYENV/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:~/$PYENV/bin:$PATH"
 
 # Virtualenvs
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(direnv hook zsh)"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+# eval "$(direnv hook zsh)"
