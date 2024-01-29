@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export WORKSPACE=$HOME/Workspace/
+export WORKSPACE=$HOME/Workspace
 
 # Make nano the default editor.
 export EDITOR=/usr/bin/nano
@@ -34,10 +34,32 @@ export MANPAGER='less -X';
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
+export GOPATH="$HOME/go"
+
+# Fix pip for python3
+export PYTHON_PATH=/usr/local/opt/python3/libexec/bin
 export PIP_REQUIRE_VIRTUALENV=true
 export PYENV="$HOME/.pyenv"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+# eval "$(pyenv init --path)"
+# eval "$(pyenv virtualenv-init -)"
+
+# Poetry
+export POETRY_HOME="$HOME/.poetry"
+
+export JENV="$HOME/.jenv"
+
+export PLENV="$HOME/.plenv"
 
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
+# Postgres
+export PGSSLMODE=verify-ca

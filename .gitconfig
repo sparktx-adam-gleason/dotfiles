@@ -185,3 +185,14 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Adam Gleason
+	email = 87654402+sparktx-adam-gleason@users.noreply.github.com
+[init]
+	templateDir = /Users/agleason/.git-template
+	defaultBranch = main

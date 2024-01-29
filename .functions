@@ -24,6 +24,17 @@ function search_history() {
 }
 
 # Install python package globally when using pyenv
-gpip(){
+function gpip() {
     PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+function cleanup() {
+	find . -type f -name "$@" -ls -delete
+}
+
+function assume-role() {
+	OUT=$(aws sts assume-role --role-arn $1 --role-session-name $2);\
+	export AWS_ACCESS_KEY_ID=$(echo $OUT | jq -r '.Credentials''.AccessKeyId');\
+	export AWS_SECRET_ACCESS_KEY=$(echo $OUT | jq -r '.Credentials''.SecretAccessKey');\
+	export AWS_SESSION_TOKEN=$(echo $OUT | jq -r '.Credentials''.SessionToken');
 }

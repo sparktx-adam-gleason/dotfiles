@@ -10,7 +10,6 @@ alias .....="cd ../../../.."
 alias downloads="cd ~/Downloads"
 alias desktop="cd ~/Desktop"
 alias workspace="cd ~/Workspace"
-alias gitcleanup="git fetch -p | git branch -vv | grep ‘: gone]’ | awk ‘{print $1}’ | xargs git branch -D"
 
 # Make terminal better
 alias h='history'
@@ -41,9 +40,6 @@ else # macOS `ls`
 	export LSCOLORS='BxBxhxDxfxhxhxhxhxcxcx'
 fi
 
-# Recursively delete `.DS_Store` files
-alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
-
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
 alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
@@ -54,5 +50,36 @@ alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.ar
 # Managing dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Managing databases
+alias mysql_start='brew services start mysql'
+alias mysql_stop='brew services stop mysql'
+alias mysql_restart='brew services restart mysql'
+
+alias psql_start='brew services start postgresql'
+alias psql_stop='brew services stop postgresql'
+alias psql_restart='brew services restart postgresql'
+
+alias redis_start='brew services start redis'
+alias redis_stop='brew services stop redis'
+alias redis_restart='brew services restart redis'
+
+alias memcached_start='brew services start memcached'
+alias memcached_stop='brew services stop memcached'
+alias memcached_restart='brew services restart memcached'
+
 # Public key shortcuts
 alias pubkey='cat $HOME/.ssh/id_rsa.pub'
+
+# github
+alias gitcleanup="git fetch -p | git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
+
+# Docker
+alias docker_login='aws --region us-east-2 ecr get-login-password | docker login --password-stdin --username AWS 125195589298.dkr.ecr.us-east-2.amazonaws.com'
+alias docker_rebuild='docker compose down -v && docker compose up --build -d'
+alias docker_restart='docker compose down && docker compose up --build -d'
+
+# React
+alias react_rebuild="rm -rf node_modules && yarn install && yarn build && yarn start"
+
+# Homebrew update
+alias brew_update="brew update && brew upgrade"
